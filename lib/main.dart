@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:chatbot/conversationList.dart';
 
 void main() {
   runApp(new MaterialApp(
@@ -42,7 +43,7 @@ class _State extends State<MyApp> {
           child: new Center(
             child: new Column(
               children: <Widget>[
-                new Text('Please Login To Continue'),
+                new Text('Please Register To Continue'),
                 new Row(
                   children: <Widget>[
                     new Text('Username: '),
@@ -82,17 +83,58 @@ class Chat extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("What Do Ya Want Me To Do Today"),
+        title: Text("What Do Ya Want Me To Do Today "),
       ),
-      body: Center(
-        child: ElevatedButton(
-          onPressed: () {
-            Navigator.pop(context);
-            // Navigate back to first route when tapped.
-          },
-          child: Text('Go back!'),
-        ),
+      body: Stack(
+        children: <Widget>[
+          Align(
+            alignment: Alignment.bottomLeft,
+            child: Container(
+              padding: EdgeInsets.only(left: 10,bottom: 10,top: 10),
+              height: 60,
+              width: double.infinity,
+              color: Colors.white,
+              child: Row(
+                children: <Widget>[
+                  GestureDetector(
+                    onTap: (){
+                    },
+                    child: Container(
+                      height: 30,
+                      width: 30,
+                      decoration: BoxDecoration(
+                        color: Colors.lightBlue,
+                        borderRadius: BorderRadius.circular(30),
+                      ),
+                      child: Icon(Icons.add, color: Colors.white, size: 20, ),
+                    ),
+                  ),
+                  SizedBox(width: 15,),
+                  Expanded(
+                    child: TextField(
+                      decoration: InputDecoration(
+                          hintText: "Write message...",
+                          hintStyle: TextStyle(color: Colors.black54),
+                          border: InputBorder.none
+                      ),
+                    ),
+                  ),
+                  SizedBox(width: 15,),
+                  FloatingActionButton(
+                    onPressed: (){},
+                    child: Icon(Icons.send,color: Colors.white,size: 18,),
+                    backgroundColor: Colors.blue,
+                    elevation: 0,
+                  ),
+                ],
+
+              ),
+            ),
+          ),
+        ],
       ),
+
     );
   }
 }
+
