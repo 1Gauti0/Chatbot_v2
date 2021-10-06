@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:chatbot/conversationList.dart';
-import 'package:chatbot/location.dart';
+import 'package:flutter_dialogflow/dialogflow_v2.dart';
 
 void main() {
   runApp(new MaterialApp(
@@ -65,7 +65,7 @@ class _State extends State<MyApp> {
                     onPressed: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => Loc()),
+                        MaterialPageRoute(builder: (context) => Chat()),
 
                       );
                       // Navigate to second route when tapped.
