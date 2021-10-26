@@ -1,6 +1,8 @@
+import 'package:chatbot/view/main2.dart';
 import 'package:flutter/material.dart';
 import 'package:chatbot/conversationList.dart';
-import 'package:flutter_dialogflow/dialogflow_v2.dart';
+// import 'package:google_sign_in/google_sign_in.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 void main() {
   runApp(new MaterialApp(
@@ -8,9 +10,11 @@ void main() {
   ));
 }
 
+
 class MyApp extends StatefulWidget {
   @override
   _State createState() => new _State();
+
 }
 
 
@@ -29,9 +33,15 @@ class _State extends State<MyApp> {
         child: new Container(
           padding: new EdgeInsets.all(32.0),
           child: new Column(
+
             children: <Widget>[
-              new Text('Drawer Mode'),
-              new RaisedButton(onPressed: () => Navigator.pop(context), child: new Text('Close'),)
+              new Text('Anon'),
+              new RaisedButton(onPressed: () {
+    Navigator.push(
+    context,
+    MaterialPageRoute(builder: (context) => MyApp2()),
+
+    );})
             ],
           ),
         ),
@@ -65,7 +75,7 @@ class _State extends State<MyApp> {
                     onPressed: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => Chat()),
+                        MaterialPageRoute(builder: (context) => HomePageDialogflow()),
 
                       );
                       // Navigate to second route when tapped.
@@ -81,6 +91,11 @@ class _State extends State<MyApp> {
   }
 }
 class Chat extends StatelessWidget {
+  int _counter = 0;
+
+  void _incrementCounter() {
+      _counter++;
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -89,6 +104,13 @@ class Chat extends StatelessWidget {
       ),
       body: Stack(
         children: <Widget>[
+          const Text(
+            'You have chatted this many times:',
+          ),
+          Text(
+            '$_counter',
+            style: Theme.of(context).textTheme.headline4,
+          ),
           Align(
             alignment: Alignment.bottomLeft,
             child: Container(
@@ -123,7 +145,7 @@ class Chat extends StatelessWidget {
                   ),
                   SizedBox(width: 15,),
                   FloatingActionButton(
-                    onPressed: (){},
+                    onPressed: _incrementCounter,
                     child: Icon(Icons.send,color: Colors.white,size: 18,),
                     backgroundColor: Colors.blue,
                     elevation: 0,

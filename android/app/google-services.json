@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "880010926990",
+    "project_id": "flutter1-drrx",
+    "storage_bucket": "flutter1-drrx.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:880010926990:android:0017cc142e064de216e2df",
+        "android_client_info": {
+          "package_name": "com.example.chatbot"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "880010926990-45s973j6f9cu0ufnjpq37n9lhu97orc6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyATpeVF2bSpLoWLyjbjueUGjLXs8WXwew0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "880010926990-45s973j6f9cu0ufnjpq37n9lhu97orc6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

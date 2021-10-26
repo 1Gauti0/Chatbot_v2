@@ -21,19 +21,29 @@ environment:
   sdk: '>=2.12.0 <3.0.0'
 
 dependencies:
-  flutter_dialogflow: ^0.1.0
+  flutter_dialogflow: ^0.1.2
   flutter:
     sdk: flutter
   intl: "^0.17.0"
-
-
+  firebase_core: ^0.5.0+1
+  firebase_database: ^4.1.1
+  firebase_auth: ^0.6.0
+  flutter_signin_button: ^1.0.0
+  provider: ^5.0.0
+  path_provider: ^2.0.4
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
+  splashscreen:
+    git:
+      url: https://github.com/DPLYR-dev/SplashScreenFlutterPackage.git
+      ref: master
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
+  build_runner: ^0.10.0
+  build_web_compilers: ^0.4.0
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 
